@@ -1,0 +1,31 @@
+# Messaging Analysis Configuration
+
+io:
+  input_dir: "text_data"
+  output_dir: "outputs"
+
+processing:
+  timezone: "UTC"
+  session_gap_minutes: 120
+  late_night_start: 23
+  late_night_end: 5
+  anonymize: false
+  redact_pii: true
+
+nlp:
+  use_transformers: false
+  sentiment_analyzer: "vader"
+  min_word_length: 2
+
+modeling:
+  random_seed: 42
+  test_size: 0.2
+  rolling_window_days: 7
+
+dynamics:
+  weights:
+    response_time: 0.3
+    initiation: 0.2
+    sentiment: 0.2
+    length: 0.15
+    questions: 0.15
